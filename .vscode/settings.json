@@ -1,0 +1,5 @@
+{
+  // Other settings...
+
+  "css.lint.unknownAtRules": "ignore"
+}

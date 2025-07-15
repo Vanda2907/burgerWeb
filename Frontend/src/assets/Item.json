@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "name": "Cheeseburger",
+    "category": "🟢",
+    "ingredients": "The cheeseburger is a timeless classic that has become synonymous with comfort food. Featuring a juicy beef patty topped with melted cheese, this burger often includes lettuce, tomato, onions, pickles, and a variety of condiments like ketchup or mayo. The simplicity and rich flavor make it a go-to choice for burger enthusiasts.",
+    "price": "Rs.105/-",
+    "image": "/b1.png",
+    "type":"all"
+  },
+
+  {
+    "id": 2,
+    "name": "Veggie Burger",
+    "category": "🟢",
+    "ingredients": "The veggie burger is a favorite among vegetarians and health-conscious foodies. Made with ingredients like beans, lentils, quinoa, or vegetables, it’s packed with flavor and nutrition. Veggie burgers have become more diverse, offering everything from spicy black bean patties to grilled vegetable medleys.",
+    "price": "Rs.110/-",
+    "image": "/b2.png",
+    "type":"all"
+  },
+
+  {
+    "id": 3,
+    "name": "Turkey Burger",
+    "category": "🟢",
+    "ingredients": "For those looking for a leaner option, the turkey burger is an excellent choice. Ground turkey is seasoned and grilled to perfection, offering a lighter yet equally satisfying burger experience. It’s often paired with fresh greens, avocado, or cranberry sauce for a unique twist.",
+    "price": "Rs.150/-",
+    "image": "/b3.png",
+    "type":"all"
+  },
+
+  {
+    "id": 4,
+    "name": "Black Bean Burger",
+    "category": "🟢",
+    "ingredients": "A staple in plant-based cuisine, the black bean burger is hearty, flavorful, and rich in protein. The patty is typically seasoned with spices like cumin and chili powder, creating a smoky, savory profile. Served with toppings like guacamole, salsa, or cheese, it’s a crowd-pleaser for vegetarians and meat-eaters alike.",
+    "price": "Rs.200/-",
+    "image": "/b4.png",
+    "type":"all"
+  },
+  {
+    "id": 5,
+    "name": "Salmon Burger",
+    "category": "🟢",
+    "ingredients": "The salmon burger is a refreshing and gourmet take on the traditional burger. Made from fresh salmon, these patties are often seasoned with dill, lemon, and herbs. They’re perfect for seafood lovers and pair beautifully with tartar sauce or a zesty aioli.",
+    "price": "Rs.250/-",
+    "image": "/b5.png",
+    "type":"all"
+  },
+
+  {
+    "id": 6,
+    "name": "Smash Burger",
+    "category": "🔴",
+    "ingredients": "The smash burger is all about technique. A ball of ground beef is smashed onto a hot griddle, creating a crispy, caramelized crust while keeping the interior juicy. Served with melted cheese, onions, and a soft bun, this burger is a simple yet decadent treat.",
+    "price": "Rs.300/-",
+    "image": "/b6.png",
+    "type":"all"
+  },
+
+  {
+    "id": 7,
+    "name": "Elk Burger",
+    "category": "🔴",
+    "ingredients": "For those seeking an adventurous option, the elk burger offers a gamey, rich flavor that’s lower in fat compared to beef. It’s often paired with robust toppings like caramelized onions, blue cheese, or wild mushrooms to complement its unique taste.",
+    "price": "Rs.350/-",
+    "image": "/b7.png",
+    "type":"all"
+  },
+
+  {
+    "id": 8,
+    "name": "Chicken Burger",
+    "category": "🔴",
+    "ingredients": "The chicken burger is a versatile and widely loved option, featuring a grilled or fried chicken patty. It can range from spicy and crispy to mild and savory, depending on the seasoning and preparation. Topped with lettuce, tomato, and mayo, it’s a lighter yet satisfying choice.",
+    "price": "Rs.250/-",
+    "image": "/b8.png",
+    "type":"all"
+  },
+
+  {
+    "id": 9,
+    "name": "Meat Burger",
+    "category": "🔴",
+    "ingredients": "The meat burger encompasses all kinds of traditional patties made from beef, lamb, or pork. Often rich and juicy, this burger is a celebration of classic grilling techniques and savory flavors. Toppings can vary, but bacon, cheddar, and barbecue sauce are popular choices.",
+    "price": "Rs.400/-",
+    "image": "/b9.png",
+    "type":"all"
+  },
+
+  {
+    "id": 10,
+    "name": "Mushroom Burger",
+    "category": "🟢",
+    "ingredients": "The mushroom burger is a vegetarian delight that often features a large portobello mushroom cap in place of a meat patty. The mushroom’s earthy flavor pairs wonderfully with melted cheese, garlic aioli, and sautéed onions. It’s a hearty and satisfying option for anyone looking to try something different.",
+    "price": "Rs.300/-",
+    "image": "/b10.png",
+    "type":"all"
+  }
+]
