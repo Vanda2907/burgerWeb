@@ -3,7 +3,7 @@ import React from "react";
 function Items({ item }) {
   return (
     <>
-      <div className="card w-72 md:w-80 shadow-2xl hover:shadow-amber-100 my-5 mx-auto cursor-pointer hover:scale-105 transition duration-200">
+      <div className="card w-72 md:w-80 shadow-2xl hover:shadow-blue-500 my-5 mx-auto cursor-pointer hover:scale-105 transition duration-200">
         <figure className="px-6 pt-6">
           <img src={item.image} alt={item.name} className="rounded-xl h-40 object-cover" />
         </figure>

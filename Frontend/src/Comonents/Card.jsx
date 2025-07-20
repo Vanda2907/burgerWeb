@@ -1,12 +1,27 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
 import Slider from "react-slick";
-import Item from "../assets/Item.json";
 import Items from "./Items";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Card() {
-  const filterData = Item.filter((data) => data.type === "all");
+  const [burger, setBurger] = useState([]);
+  useEffect(() => {
+    const getBurger = async () => {
+      try {
+        const res = await axios.get("http://localhost:4001/burger");
+        console.log(res.data);
+        const bur = res.data.filter((data) => data.type === "all");
+        setBurger(bur);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBurger();
+  }, []);
 
   const settings = {
     dots: true,
@@ -46,21 +61,21 @@ function Card() {
 
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-10 text-center my-10">
-        <span className="text-xl md:text-4xl font-bold border-2 border-amber-400 bg-amber-400 hover:bg-amber-500 text-white rounded-3xl py-2 px-4 inline-block transition duration-200">
-          Today's Offer for You 🔥 :)
-        </span>
-      </div>
+        <div className="max-w-screen-2xl container mx-auto px-4 md:px-10 text-center my-10">
+          <span className="text-xl md:text-4xl font-bold border-2 border-amber-400 bg-amber-400 hover:bg-amber-500 text-white rounded-3xl py-2 px-4 inline-block transition duration-200">
+            Today's Offer for You 🔥 :)
+          </span>
+        </div>
 
-      <div className="slider-container max-w-screen-2xl container mx-auto px-4 md:px-20 mb-10">
-        <Slider {...settings}>
-          {filterData.map((item) => (
-            <div key={item.id} className="px-2">
-              <Items item={item} />
-            </div>
-          ))}
-        </Slider>
-      </div>
+        <div className="slider-container max-w-screen-2xl container mx-auto px-4 md:px-20 mb-10">
+          <Slider {...settings}>
+            {burger.map((item) => (
+              <div key={item.id} className="px-2">
+                <Items item={item} />
+              </div>
+            ))}
+          </Slider>
+        </div>
     </>
   );
 }

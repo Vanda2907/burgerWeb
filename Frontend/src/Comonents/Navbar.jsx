@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import Login from "./Login";
+import Logout from "./Logout";
+import { useAuth } from "../Context/AuthContext";
 
 function Navbar() {
   const [sticky, setSticky] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [authUser] = useAuth();
+  console.log("Auth User:", authUser);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -31,10 +35,10 @@ function Navbar() {
         <a href="/">Home</a>
       </li>
       <li className="hover:text-amber-500">
-        <a>About Us</a>
+        <a href="/aboutus">About Us</a>
       </li>
       <li className="hover:text-amber-500">
-        <a>Contact Us</a>
+        <a href="/contactus">Contact Us</a>
       </li>
       <li className="hover:text-amber-500">
         <a href="/menu">Menu</a>
@@ -189,16 +193,24 @@ function Navbar() {
             </span>
             <FaShoppingCart size={24} />
           </button>
-
-          {/* Login */}
-          <div className="text-dark text-xl px-3 py-2 rounded-md hover:bg-amber-500 duration-200 cursor-pointer font-bold border">
-            <a
-              onClick={() => document.getElementById("my_modal_3").showModal()}
-            >
-              <FaUser />
-            </a>
-            <Login />
-          </div>
+          {
+            /* Logout Button */
+            authUser ? (
+              <Logout onLogout={() => console.log("User logged out")} />
+            ) : (
+              /* Login     */
+              <div className="text-dark text-xl px-3 py-2 rounded-md hover:bg-amber-500 duration-200 cursor-pointer font-bold border">
+                <a
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
+                  <FaUser />
+                </a>
+                <Login />
+              </div>
+            )
+          }
         </div>
       </div>
     </div>
