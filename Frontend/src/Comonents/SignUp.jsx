@@ -44,7 +44,7 @@ function SignUp() {
         <div className="backdrop-blur-xl bg-white/40 border border-amber-300 rounded-3xl shadow-2xl p-15 w-full max-w-md transition-transform hover:scale-105 duration-300">
           <Link
             to="/"
-            className="btn btn-sm btn-circle btn-ghost hover:bg-red-100 md:ml-80 ml-60 top-0"
+            className="btn btn-sm btn-circle btn-ghost hover:bg-red-100 md:ml-80 ml-60 top-0 text-gray-700 dark:text-black"
           >
             ✕
           </Link>
@@ -60,7 +60,7 @@ function SignUp() {
             {/* Username */}
             <label className="input validator bg-white/50 rounded-xl border-2 border-transparent focus-within:border-amber-500 transition">
               <svg
-                className="h-[1em] opacity-50"
+                className="h-[1em] opacity-50 text-gray-700 dark:text-black"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -82,7 +82,7 @@ function SignUp() {
                 minLength="3"
                 maxLength="30"
                 {...register("username", { required: "Username is required" })}
-                className="bg-transparent focus:outline-none ml-2 w-full"
+                className="bg-transparent focus:outline-none ml-2 w-full dark:placeholder:text-black placeholder:text-gray-500"
               />
             </label>
             {errors.username && (
@@ -92,7 +92,7 @@ function SignUp() {
             {/* Email */}
             <label className="input validator bg-white/50 rounded-xl border-2 border-transparent focus-within:border-amber-500 transition">
               <svg
-                className="h-[1em] opacity-50"
+                className="h-[1em] opacity-50 text-gray-700 dark:text-black"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -112,7 +112,7 @@ function SignUp() {
                 required
                 placeholder="Enter Email ID"
                 {...register("email", { required: "Email is required" })}
-                className="bg-transparent focus:outline-none ml-2 w-full"
+                className="bg-transparent focus:outline-none ml-2 w-full dark:placeholder:text-black placeholder:text-gray-500"
               />
             </label>
             {errors.email && (
@@ -121,7 +121,7 @@ function SignUp() {
             {/* Password */}
             <label className="input validator bg-white/50 rounded-xl border-2 border-transparent focus-within:border-amber-500 transition">
               <svg
-                className="h-[1em] opacity-50"
+                className="h-[1em] opacity-50 text-gray-700 dark:text-black"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -153,7 +153,7 @@ function SignUp() {
                     message: "Minimum 8 characters required",
                   },
                 })}
-                className="bg-transparent focus:outline-none ml-2 w-full"
+                className="bg-transparent focus:outline-none ml-2 w-full dark:placeholder:text-black placeholder:text-gray-500"
               />
             </label>
             {errors.password && (
@@ -163,7 +163,7 @@ function SignUp() {
             {/* Confirm Password */}
             <label className="input validator bg-white/50 rounded-xl border-2 border-transparent focus-within:border-amber-500 transition">
               <svg
-                className="h-[1em] opacity-50"
+                className="h-[1em] opacity-50 text-gray-700 dark:text-black"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -193,7 +193,7 @@ function SignUp() {
                   validate: (value) =>
                     value === password || "Passwords do not match",
                 })}
-                className="bg-transparent focus:outline-none ml-2 w-full"
+                className="bg-transparent focus:outline-none ml-2 w-full dark:placeholder:text-black placeholder:text-gray-500"
               />
             </label>
             {errors.confirmPassword && (
@@ -210,7 +210,7 @@ function SignUp() {
             </button>
           </form>
 
-          <p className="text-center text-sm mt-4">
+          <p className="text-center text-sm mt-4 dark:text-black text-gray-600">
             Already have an account?{" "}
             <button
               className="text-amber-800 font-semibold underline hover:text-amber-900 cursor-pointer"

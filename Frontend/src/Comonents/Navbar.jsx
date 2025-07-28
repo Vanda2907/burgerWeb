@@ -3,11 +3,16 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import Login from "./Login";
 import Logout from "./Logout";
 import { useAuth } from "../Context/AuthContext";
+import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [sticky, setSticky] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [authUser] = useAuth();
+  const { cartItems } = useCart();
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   console.log("Auth User:", authUser);
 
   useEffect(() => {
@@ -78,7 +83,7 @@ function Navbar() {
               {NavItem}
             </ul>
           </div>
-          <a className="text-xl md:text-2xl font-bold text-amber-600 hover:text-amber-900 ml-2 cursor-pointer">
+          <a href="/" className="text-xl md:text-2xl font-bold text-amber-600 hover:text-amber-900 ml-2 cursor-pointer">
             Burgerlicious
           </a>
         </div>
@@ -186,13 +191,16 @@ function Navbar() {
             </label>
           </div>
 
-          {/* Cart */}
-          <button className="bg-none p-2 rounded relative cursor-pointer">
-            <span className="absolute -top-2 -right-2 text-amber-900 rounded-full w-5 h-5 flex justify-center items-center text-xs">
-              0
-            </span>
-            <FaShoppingCart size={24} />
-          </button>
+          {authUser && (
+            <button className="bg-none p-2 rounded relative cursor-pointer">
+              <Link to="/cart" className="relative">
+                <span className="absolute -top-2 -right-2 bg-amber-300 text-amber-900 rounded-full w-5 h-5 flex justify-center items-center text-xs">
+                  {totalQuantity}
+                </span>
+                <FaShoppingCart size={24} />
+              </Link>
+            </button>
+          )}
           {
             /* Logout Button */
             authUser ? (

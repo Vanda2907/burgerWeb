@@ -1,4 +1,5 @@
 import React from "react";
+import LegalModals from "./LegalModals"; // adjust path as needed
 
 function Footer() {
   return (
@@ -6,10 +7,31 @@ function Footer() {
       <hr className="my-4" />
       <footer className="bg-base-200 text-base-content rounded py-10 px-4 flex flex-col items-center gap-6">
         <nav className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-          <a className="link link-hover">About Us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press Kit</a>
+          <a href="/aboutus" className="link link-hover">
+            About Us
+          </a>
+          <a href="/contactus" className="link link-hover">
+            Contact Us
+          </a>
+          <a href="/menu" className="link link-hover">
+            Menu
+          </a>
+          <a
+            className="link link-hover mr-4"
+            onClick={() => document.getElementById("privacy_modal").showModal()}
+          >
+            Privacy Policy
+          </a>
+
+          <a
+            className="link link-hover"
+            onClick={() => document.getElementById("terms_modal").showModal()}
+          >
+            Terms of Service
+          </a>
+
+          {/* Include the modals */}
+          <LegalModals />
         </nav>
 
         <nav>

@@ -1,4 +1,3 @@
-// in controller folder
 //define function
 import User from "../model/user.model.js";
 import bcrypt from "bcryptjs"; // Import bcrypt for password hashing

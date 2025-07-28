@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -10,6 +10,7 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
@@ -20,12 +21,10 @@ function Login() {
       console.log(res.data);
       toast.success("User logged in successfully!");
       localStorage.setItem("Users", JSON.stringify(res.data.user));
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000); // Reload after 1 second to ensure the user data is set
+      window.location.reload();
       document.getElementById("my_modal_3").close();
       // ✅ Navigate to Home after login
-      <Navigate to="/" />;
+      navigate("/");
     } catch (error) {
       console.log(error);
       toast.error(
@@ -33,7 +32,7 @@ function Login() {
       );
       setTimeout(() => {
         window.location.reload();
-      }, 2000); // Reload after 2 seconds to ensure the user data is set
+      }, 1000); // Reload after 1 second to ensure the user data is set
       document.getElementById("my_modal_3").close();
     }
   };
@@ -42,7 +41,7 @@ function Login() {
     <dialog id="my_modal_3" className="modal">
       <div className="modal-box bg-gradient-to-br from-amber-100/80 to-orange-100/80 backdrop-blur-md border border-amber-400 shadow-xl rounded-3xl p-6 flex flex-col items-center">
         <button
-          className="btn btn-sm btn-circle btn-ghost hover:bg-red-100 self-end"
+          className="btn btn-sm btn-circle btn-ghost hover:bg-red-100 self-end text-gray-700 dark:text-black"
           onClick={() => document.getElementById("my_modal_3").close()}
         >
           ✕
@@ -76,7 +75,7 @@ function Login() {
               type="email"
               {...register("email", { required: "Email is required" })}
               placeholder="Enter Your Email"
-              className="grow bg-transparent focus:outline-none"
+              className="grow bg-transparent focus:outline-none dark:placeholder:text-black placeholder:text-gray-500"
             />
           </label>
           {errors.email && (
@@ -108,7 +107,7 @@ function Login() {
               type="password"
               {...register("password", { required: "Password is required" })}
               placeholder="Password"
-              className="grow bg-transparent focus:outline-none"
+              className="grow bg-transparent focus:outline-none dark:placeholder:text-black placeholder:text-gray-500"
             />
           </label>
           {errors.password && (

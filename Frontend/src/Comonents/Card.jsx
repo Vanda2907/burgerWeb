@@ -3,9 +3,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import Slider from "react-slick";
-import Items from "./Items";
 import { useState } from "react";
 import { useEffect } from "react";
+import HomeItem from "./homeItem";
 
 function Card() {
   const [burger, setBurger] = useState([]);
@@ -71,7 +71,7 @@ function Card() {
           <Slider {...settings}>
             {burger.map((item) => (
               <div key={item.id} className="px-2">
-                <Items item={item} />
+                <HomeItem item={item} />
               </div>
             ))}
           </Slider>

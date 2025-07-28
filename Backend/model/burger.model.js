@@ -5,7 +5,7 @@ const burgerSchema=mongoose.Schema({
     name:String,
     category:String,
     ingredients:String,
-    price:String,
+    price:Number,
     image:String,
     type:String
 });

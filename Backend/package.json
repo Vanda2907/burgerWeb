@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/Vanda2907/burgerWeb#readme",
   "dependencies": {
+    "@types/body-parser": "^1.19.6",
     "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "mongoose": "^8.16.4",
-    "nodemon": "^3.1.10"
-  }
+    "nodemon": "^3.1.10",
+    "razorpay": "^2.9.6"
+  },
+  "keywords": []
 }

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { toast } from "react-hot-toast";
+import axios from "axios";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -12,18 +14,37 @@ function ContactUs() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      const res = await axios.post("http://localhost:4001/contact", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const { data } = res;
+
+      if (res.status === 201) {
+        toast.success("✅ Message sent successfully!");
+        console.log("Contact form submitted:", data.contact);
+        // Reset form fields
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error(`❗ ${data.error || "Something went wrong."}`);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response?.data?.message || "❗ Error sending message. Please try again.");
+    }
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl font-bold text-orange-700 mb-4">
+    <div className="max-w-screen-2xl container mx-auto md:px-20 flex flex-col items-center justify-center p-4">
+      <h1 className="text-3xl md:text-4xl font-bold text-orange-700 mt-20 text-center">
         🍔 Contact BurgerHub
       </h1>
-      <p className="mb-8 text-center max-w-md">
+      <p className="text-xl text-center max-w-md p-10">
         Got questions, feedback, or want to collaborate? We’d love to hear from
         you!
       </p>
